@@ -1,13 +1,15 @@
-var x = {
+  missingAssets : {
+      mtype:'list'
+  },
+  
   isFocused$ : function(){
-          return this.parentVM.assetSetWithFocus == this;
+      return this.parentVM.assetSetWithFocus == this;
   },
   
   isClosable$ : function(){
       return this.parentVM.assetSetList.length>1;
   },
   
-  showMissing$ : function(){
-      return this.rootVM.options.missingWarning;
+  showMissingSummary$ : function(){
+      return this.rootVM.options.showMissingWarnings && this.missingAssets.length>0;
   }
-}
