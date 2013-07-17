@@ -15,7 +15,14 @@ glu.defModel('examples.assets.main', {
     detail:{ mtype:'asset' },
     init:function(){
         this.cloneSet(); //clone dummy asset set
-    }    
+    },
+    cloneSet:function () {
+        var newSlice = this.model(this.assetSetWithFocus.clone());
+        newSlice.set('name', 'Asset Set ' + this.sliceCounter++);
+        this.assetSetList.add(newSlice);
+        newSlice.init();
+        this.set('assetSetWithFocus', newSlice);
+    }
 }
 glu.defModel('examples.assets.options', {
     warnings : true,
