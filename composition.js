@@ -35,3 +35,7 @@ glu.defModel('examples.assets.options', {
         return this.warnings;
     }
 });
+glu.defModel('examples.assets.assetSet',{
+    //asset set (a tab/panel with a grid of assets 
+    //and a summary) definition...
+})
